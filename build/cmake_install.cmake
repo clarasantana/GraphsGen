@@ -1,4 +1,4 @@
-# Install script for directory: /home/namoralzinhaplz/Área de Trabalho/grapsGen
+# Install script for directory: /home/pedro/RUNDMC/GrapsGen
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/grapsGen"
          RPATH "")
   ENDIF()
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/build" TYPE EXECUTABLE FILES "/home/namoralzinhaplz/Área de Trabalho/grapsGen/build/grapsGen")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/build" TYPE EXECUTABLE FILES "/home/pedro/RUNDMC/GrapsGen/build/grapsGen")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/grapsGen" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/grapsGen")
     IF(CMAKE_INSTALL_DO_STRIP)
@@ -54,7 +54,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/namoralzinhaplz/Área de Trabalho/grapsGen/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/pedro/RUNDMC/GrapsGen/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/namoralzinhaplz/Área de Trabalho/grapsGen/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/pedro/RUNDMC/GrapsGen/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

@@ -61,7 +61,6 @@ void show_title(cairo_t *context, int width, int height,const char *title, int c
 	cairo_set_font_size(context, width/25);
 	cairo_move_to(context, width/2 - (width/8), height/10);
 	cairo_show_text(context, title);
-	cairo_stroke(context);
 	cairo_restore(context);
 }
 

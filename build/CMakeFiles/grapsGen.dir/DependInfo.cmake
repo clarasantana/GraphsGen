@@ -4,10 +4,10 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_C
-  "/home/namoralzinhaplz/Área de Trabalho/grapsGen/drawgraph.c" "/home/namoralzinhaplz/Área de Trabalho/grapsGen/build/CMakeFiles/grapsGen.dir/drawgraph.c.o"
-  "/home/namoralzinhaplz/Área de Trabalho/grapsGen/loadingjsonfile.c" "/home/namoralzinhaplz/Área de Trabalho/grapsGen/build/CMakeFiles/grapsGen.dir/loadingjsonfile.c.o"
-  "/home/namoralzinhaplz/Área de Trabalho/grapsGen/main.c" "/home/namoralzinhaplz/Área de Trabalho/grapsGen/build/CMakeFiles/grapsGen.dir/main.c.o"
-  "/home/namoralzinhaplz/Área de Trabalho/grapsGen/plotgraph.c" "/home/namoralzinhaplz/Área de Trabalho/grapsGen/build/CMakeFiles/grapsGen.dir/plotgraph.c.o"
+  "/home/pedro/RUNDMC/GrapsGen/drawgraph.c" "/home/pedro/RUNDMC/GrapsGen/build/CMakeFiles/grapsGen.dir/drawgraph.c.o"
+  "/home/pedro/RUNDMC/GrapsGen/loadingjsonfile.c" "/home/pedro/RUNDMC/GrapsGen/build/CMakeFiles/grapsGen.dir/loadingjsonfile.c.o"
+  "/home/pedro/RUNDMC/GrapsGen/main.c" "/home/pedro/RUNDMC/GrapsGen/build/CMakeFiles/grapsGen.dir/main.c.o"
+  "/home/pedro/RUNDMC/GrapsGen/plotgraph.c" "/home/pedro/RUNDMC/GrapsGen/build/CMakeFiles/grapsGen.dir/plotgraph.c.o"
   )
 SET(CMAKE_C_COMPILER_ID "GNU")
 

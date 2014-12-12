@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/namoralzinhaplz/Área de Trabalho/grapsGen/loadingjsonfile.h
+/home/pedro/RUNDMC/GrapsGen/loadingjsonfile.h
 
-/home/namoralzinhaplz/Área de Trabalho/grapsGen/plotgraph.c
+/home/pedro/RUNDMC/GrapsGen/plotgraph.c
 stdio.h
 -
 loadingjsonfile.h
-/home/namoralzinhaplz/Área de Trabalho/grapsGen/loadingjsonfile.h
+/home/pedro/RUNDMC/GrapsGen/loadingjsonfile.h
 cairo/cairo.h
 -
 
