@@ -24,10 +24,13 @@ void show_graph(char str[])
 	const int width = graph_width(str);
 	const int height = graph_height(str);
 	const char *fileName = return_fileName(str);
+	const char *title = return_name(str);		
 	int *xPoints, *yPoints;
 	int xyPointsAmount;
 	xyPointsAmount = gets_json_data(str, &xPoints, &yPoints);
 	int color[4] = {0,255,0,255};
+
+	const int type = graph_type(str);
 	//initializing cairo
 
 	cairo_surface_t *surface;
@@ -48,11 +51,24 @@ void show_graph(char str[])
 
 	//drawing the graph with .json file data
 	//desenhando pontos
+	int blue[4] = {255,0,0,255};
 
-	 draw_Backgroud(context, width, height);
-	 draw_Axis(context, width, height);
-	 show_Points(context,xPoints,yPoints,color,2,width,height,xyPointsAmount);
-
+	draw_Backgroud(context, width, height);
+	draw_Axis(context, width, height);
+	show_title(context, width, height, title, color);
+	 
+	//Olhe se é pra desenhar pontos	
+	if(type == 0)
+	{
+		show_Points(context,xPoints,yPoints,color,2,width,height,xyPointsAmount);
+	} else if(type == 1)
+	{
+		draw_lines(context,xPoints,yPoints,width,height,color,xyPointsAmount);
+	} else if(type == 2) {
+		draw_area_by_lines(context,xPoints,yPoints,width,height,color,xyPointsAmount);
+	}
+	//Origem
+	//plot_Point(context, (0.05*width), (height - (height * 0.05)), blue,4.0);
 	
 	//rotina fim do mundo
 

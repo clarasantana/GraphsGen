@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/namoralzinhaplz/Área de Trabalho/grapsGen/loadingjsonfile.h
+
+/home/namoralzinhaplz/Área de Trabalho/grapsGen/plotgraph.c
+stdio.h
+-
+loadingjsonfile.h
+/home/namoralzinhaplz/Área de Trabalho/grapsGen/loadingjsonfile.h
+cairo/cairo.h
+-
+

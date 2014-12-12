@@ -1,0 +1,1 @@
+/usr/bin/cc  -std=c99    CMakeFiles/grapsGen.dir/main.c.o CMakeFiles/grapsGen.dir/loadingjsonfile.c.o CMakeFiles/grapsGen.dir/drawgraph.c.o CMakeFiles/grapsGen.dir/plotgraph.c.o  -o grapsGen -rdynamic -ljansson -lcairo 
