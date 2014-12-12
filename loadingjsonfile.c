@@ -16,7 +16,7 @@ json_t *openning_json(char str[])
 	return root;
 }
 	
-	//gets the .json file name
+	//gets the chart file name
 const char *return_fileName(char str[])
 {	
 	json_t *root = openning_json(str);
@@ -48,6 +48,10 @@ const int graph_width(char str[])
 	json_t *root = openning_json(str);
 	json_t * jwidth = json_object_get(root, "width");
 	const int width = json_integer_value(jwidth);
+	if(width < 200 || width > 1000) {
+			printf("Altura não suportada.\n");
+			exit(1);
+		}
 	return width;
 }
 
@@ -57,6 +61,10 @@ const int graph_height(char str[])
 	json_t *root = openning_json(str);
 	json_t * jheight = json_object_get(root, "height");
 	const int height = json_integer_value(jheight);
+	if(height < 200 || height > 1000) {
+			printf("Largura não suportada.\n");
+			exit(10);
+		}
 	return height;
 }
 
@@ -107,22 +115,3 @@ const int gets_json_data(char str[], int **reads_x, int **reads_y)
 	}	
 	return contentLength;
 }
-/*
-const int gets_json_data(char str[], int **reads_x, int **reads_y) {
-	json_t *root = openning_json(str);
-	json_t *jPoints = json_object_get(root, "content");
-	int jLenght = json_array_size(jPoints);
-	(*get_x) = (int*) malloc(jLenght * sizeof(int));
-	(*get_y) = (int*) malloc(jLenght * sizeof(int));
-	for(int i = 0; i < json_array_size(jPoints); ++i){
-		json_t * jPoint = json_array_get(jPoints, i);
-		json_t *jX = json_object_get(jPoint, "x");
-		const int x = json_integer_value(jX);
-		json_t *jY = json_object_get(jPoint, "y");
-		const int y = json_integer_value(jY);
-		//Armazenar tudo isso;
-		(*get_x)[i] = x;
-		(*get_y)[i] = y;
-	}
-	return jLenght;
-}*/
