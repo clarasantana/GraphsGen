@@ -18,8 +18,8 @@ void draw_Backgroud(cairo_t *context, int width, int height)
 void draw_Axis(cairo_t *context, int width, int height) 
 {
 	cairo_save(context);
-    	cairo_set_line_width (context, 2.0);
-    	cairo_set_source_rgb (context, 0, 0, 0);
+    cairo_set_line_width (context, 2.0);
+    cairo_set_source_rgb (context, 0, 0, 0);
   	//x axis
   	cairo_move_to(context, 0.05*width, 0.95*height);
 	cairo_line_to(context, 0.95*width, 0.95*height);
@@ -48,8 +48,8 @@ void draw_Axis(cairo_t *context, int width, int height)
 	cairo_show_text(context, "y");
 	cairo_move_to(context, 0.02*width, 0.98*height);
 	cairo_show_text(context, "0");
-    	cairo_stroke(context);
-	 cairo_restore(context);
+    cairo_stroke(context);
+    cairo_restore(context);
 }
 
 void plot_Point(cairo_t *context, int x, int y, int colors[], double scale)
@@ -62,14 +62,14 @@ void plot_Point(cairo_t *context, int x, int y, int colors[], double scale)
 	cairo_restore(context);
 }
 
-void show_Points(cairo_t *context, int x, int y, int colors[], double scale)
+void show_Points(cairo_t *context, int x[], int y[], int colors[], double scale)
 {
 	int i;
 	for (i = 0; i < xyPointsAmount; i++)
 	{
 		if (x[i] != -1 && y[i] != -1)
 		{
-			plot_Point(context, (0.5*width + xPoints[i]), (height - 0.95*yPoints[i]) - [i], colors, scale);
+			plot_Point(context, (0.5*width + x[i]), (height - 0.95*y[i]) - [i], colors, scale);
 		}
 	} 
 }

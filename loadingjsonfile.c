@@ -71,28 +71,29 @@ const int graph_type(char str[])
 
 	//rgba (32-bit) color format
 	//Estava sem retorno, mudei pra void
-void graph_colors(char str[], int **colors)
+const int graph_colors(char str[], int **colors)
 {
 	json_t *root = openning_json(str);
 	json_t *jColor = json_object_get(root, "color");
-	int jColor_lenght = 4;
-	int i;
+	int jColor_lenght = json_array_size(jColor);
 	(*colors) = (int *) malloc(jColor_lenght * sizeof(int)); 
+	int i;
 	for (i = 0; i < jColor_lenght; i++)
 	{
 		json_t * jItem = json_array_get(jColor, i);
 		const int item = json_integer_value(jItem);
 		(*colors)[i] = item;
 	}
+	return jColor_lenght;
 }
 	//reading the dots coordinates in .json file
 const int gets_json_data(char str[], int **reads_x, int **reads_y)
 {
 	json_t *root = openning_json(str);
 	json_t *jPoints = json_object_get(root, "content");
-	int sizeContent = json_array_size(jPoints);
-	(*reads_x) = (int *) malloc(sizeContent *sizeof(int));
-	(*reads_y) = (int *) malloc(sizeContent *sizeof(int));
+	int contentLength = json_array_size(jPoints);
+	(*reads_x) = (int *) malloc(contentLength *sizeof(int));
+	(*reads_y) = (int *) malloc(contentLength *sizeof(int));
 	int i;
 	for (i = 0; i < json_array_size(jPoints); i++)
 	{
@@ -104,5 +105,5 @@ const int gets_json_data(char str[], int **reads_x, int **reads_y)
 		(*reads_x)[i] = x;
 		(*reads_y)[i] = y; 
 	}	
-	return sizeContent;
+	return contentLength;
 }

@@ -24,7 +24,7 @@ void show_graph(char str[])
 	const int width = graph_width(str);
 	const int height = graph_height(str);
 	const char *fileName = return_fileName(str);
-	int *xPoints, *yPoints;
+	int *xPoints[], *yPoints[];
 	int xyPointsAmount;
 	xyPointsAmount = gets_json_data(str, &xPoints, &yPoints);
 	//initializing cairo
