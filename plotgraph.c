@@ -62,14 +62,14 @@ void plot_Point(cairo_t *context, int x, int y, int colors[], double scale)
 	cairo_restore(context);
 }
 
-void show_Points(cairo_t *context, int x[], int y[], int colors[], double scale)
+void show_Points(cairo_t *context, int x[], int y[], int colors[], double scale,int width, int height,int xyPointsAmount)
 {
 	int i;
 	for (i = 0; i < xyPointsAmount; i++)
 	{
 		if (x[i] != -1 && y[i] != -1)
 		{
-			plot_Point(context, (0.5*width + x[i]), (height - 0.95*y[i]) - [i], colors, scale);
+			plot_Point(context, (30) + x[i], (height - 30) - y[i], colors, scale);
 		}
 	} 
 }

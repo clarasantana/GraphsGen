@@ -7,7 +7,7 @@ json_t *openning_json(char str[])
 	//loading the .json file
 	json_t *root;
 	json_error_t error;
-	root = json_load_file("../test.json", 0, &error);
+	root = json_load_file(str, 0, &error);
 	if(root == 0) 
 	{
 		printf("Erro ao ler o arquivo.\nLinha de erro: %d.\n", error.line);
@@ -107,3 +107,22 @@ const int gets_json_data(char str[], int **reads_x, int **reads_y)
 	}	
 	return contentLength;
 }
+/*
+const int gets_json_data(char str[], int **reads_x, int **reads_y) {
+	json_t *root = openning_json(str);
+	json_t *jPoints = json_object_get(root, "content");
+	int jLenght = json_array_size(jPoints);
+	(*get_x) = (int*) malloc(jLenght * sizeof(int));
+	(*get_y) = (int*) malloc(jLenght * sizeof(int));
+	for(int i = 0; i < json_array_size(jPoints); ++i){
+		json_t * jPoint = json_array_get(jPoints, i);
+		json_t *jX = json_object_get(jPoint, "x");
+		const int x = json_integer_value(jX);
+		json_t *jY = json_object_get(jPoint, "y");
+		const int y = json_integer_value(jY);
+		//Armazenar tudo isso;
+		(*get_x)[i] = x;
+		(*get_y)[i] = y;
+	}
+	return jLenght;
+}*/

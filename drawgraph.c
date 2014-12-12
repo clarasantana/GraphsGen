@@ -24,9 +24,10 @@ void show_graph(char str[])
 	const int width = graph_width(str);
 	const int height = graph_height(str);
 	const char *fileName = return_fileName(str);
-	int *xPoints[], *yPoints[];
+	int *xPoints, *yPoints;
 	int xyPointsAmount;
 	xyPointsAmount = gets_json_data(str, &xPoints, &yPoints);
+	int color[4] = {0,255,0,255};
 	//initializing cairo
 
 	cairo_surface_t *surface;
@@ -46,10 +47,11 @@ void show_graph(char str[])
 	cairo_t *context = cairo_create(surface);
 
 	//drawing the graph with .json file data
-	
+	//desenhando pontos
 
 	 draw_Backgroud(context, width, height);
 	 draw_Axis(context, width, height);
+	 show_Points(context,xPoints,yPoints,color,2,width,height,xyPointsAmount);
 
 	
 	//rotina fim do mundo
