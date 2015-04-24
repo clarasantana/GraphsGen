@@ -6,20 +6,7 @@
 #include <cairo/cairo-pdf.h>
 void show_graph(char str[])
 {
-	/*
-	const char *return_fileName(char str[]);
-	const char *return_name(char str[]);
-	const char *return_format(char str[]);
-	const int graph_width(char str[]);
-	const int graph_height(char str[]);
-	const int graph_type(char str[]);
-	const int graph_colors(char str[], int **colors);
-	const int gets_json_data(char str[], int **reads_x, int **reads_y);
-	void draw_Axis(cairo_t *context,int height,int width);
-	void draw_Backgroud(cairo_t *context,int width,int height);
-	*/
 	//loading .json file
-
 	const char *format = return_format(str);
 	const int width = graph_width(str);
 	const int height = graph_height(str);
@@ -29,10 +16,9 @@ void show_graph(char str[])
 	int xyPointsAmount;
 	xyPointsAmount = gets_json_data(str, &xPoints, &yPoints);
 	int color[4] = {0,255,0,255};
-
 	const int type = graph_type(str);
-	//initializing cairo
 
+	//initializing cairo
 	cairo_surface_t *surface;
 	if (!(strcmp(format, "png")))
 	{
@@ -50,14 +36,14 @@ void show_graph(char str[])
 	cairo_t *context = cairo_create(surface);
 
 	//drawing the graph with .json file data
-	//desenhando pontos
+	//drawing dots
 	int blue[4] = {255,0,0,255};
 
 	draw_Backgroud(context, width, height);
 	draw_Axis(context, width, height);
 	show_title(context, width, height, title, color);
 	 
-	//Olhe se é pra desenhar pontos	
+	//Checking graph type	
 	if(type == 0)
 	{
 		show_Points(context,xPoints,yPoints,color,2,width,height,xyPointsAmount);
@@ -67,11 +53,8 @@ void show_graph(char str[])
 	} else if(type == 2) {
 		draw_area_by_lines(context,xPoints,yPoints,width,height,color,xyPointsAmount);
 	}
-	//Origem
-	//plot_Point(context, (0.05*width), (height - (height * 0.05)), blue,4.0);
 	
-	//rotina fim do mundo
-
+	//saving the drawing according to file type specified on .json
 	if(!(strcmp(format,"png"))){
 		cairo_surface_write_to_png(surface,fileName);
 	} else if(!(strcmp(format,"pdf"))) {	
